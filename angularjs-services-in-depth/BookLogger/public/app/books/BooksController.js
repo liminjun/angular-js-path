@@ -12,7 +12,7 @@
         //vm.allBooks=dataService.getAllBooks();
         dataService.getAllBooks()
             .then(function(books){
-                vm.getAllBooks=books;
+                vm.allBooks=books;
             },function(response){
                 console.log(response);
             },function(notification){
