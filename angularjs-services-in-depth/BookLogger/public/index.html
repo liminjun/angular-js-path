@@ -11,10 +11,20 @@
 <div ng-controller="BooksController as books">
 
     <h1>Hello World!{{books.appName}}</h1>
+
+    <h3>All Books</h3>
     <div>
         <ul>
             <li ng-repeat="book in books.allBooks">
                 {{book.title}}--{{book.author}}
+            </li>
+        </ul>
+    </div>
+    <h3>All Readers</h3>
+    <div>
+        <ul>
+            <li ng-repeat="reader in books.allReaders">
+                {{reader.name}} - {{books.getBadge(reader.totalMinutesRead)}}
             </li>
         </ul>
     </div>
@@ -24,5 +34,7 @@
 <script src="app/app.js"></script>
 <script src="app/books/BooksController.js"></script>
 <script src="app/services/dataService.js"></script>
+<script src="app/services/constantService.js"></script>
+<script src="app/services/badgeService.js"></script>
 </body>
 </html>
