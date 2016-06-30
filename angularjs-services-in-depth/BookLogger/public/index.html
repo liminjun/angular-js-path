@@ -8,33 +8,17 @@
 </head>
 <body ng-app="app">
 
-<div ng-controller="BooksController as books">
-
-    <h1>Hello World!{{books.appName}}</h1>
-
-    <h3>All Books</h3>
-    <div>
-        <ul>
-            <li ng-repeat="book in books.allBooks">
-                {{book.title}}--{{book.author}}
-            </li>
-        </ul>
-    </div>
-    <h3>All Readers</h3>
-    <div>
-        <ul>
-            <li ng-repeat="reader in books.allReaders">
-                {{reader.name}} - {{books.getBadge(reader.totalMinutesRead)}}
-            </li>
-        </ul>
-    </div>
-</div>
+<div ng-view></div>
 
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.0/angular-route.js"></script>
 <script src="app/app.js"></script>
 <script src="app/books/BooksController.js"></script>
 <script src="app/services/dataService.js"></script>
 <script src="app/services/constantService.js"></script>
 <script src="app/services/badgeService.js"></script>
+
+<script src="app/books/AddBookController.js"></script>
+<script src="app/books/EditBookController.js"></script>
 </body>
 </html>

@@ -37,7 +37,7 @@ function dataService($q,$timeout) {
             }else{
                 deferred.reject('Error retrieving books.');
             }            
-        },1000);
+        },0);
         return deferred.promise;
     }
 
@@ -67,4 +67,3 @@ function dataService($q,$timeout) {
         ];
     }
 }
-
