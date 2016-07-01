@@ -1,9 +1,9 @@
 (function () {
 
     angular.module('app')
-        .controller('EditBookController', ['$routeParams','dataService', 'books', EditBookController]);
+        .controller('EditBookController', ['$routeParams','dataService', 'books','$cookies','$cookieStore', EditBookController]);
 
-    function EditBookController($routeParams, dataService,books) {
+    function EditBookController($routeParams, dataService,books,$cookies,$cookieStore) {
         var vm=this;
         console.log($routeParams.bookID);
 
@@ -11,6 +11,11 @@
             return item.book_id == $routeParams.bookId;
         })[0];
 
+        vm.setAsFavorite=function(){
+            $cookies.favoriteBook=vm.currentBook.title;
+        }
+
+        $cookieStore.put('lastEdited',vm.currentBook);
         // dataService.getAllBooks()
         //     .then(function(books){
         //         debugger;

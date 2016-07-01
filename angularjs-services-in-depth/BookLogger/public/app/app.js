@@ -1,6 +1,6 @@
 (function () {
 
-    var app=angular.module('app', ['ngRoute']);
+    var app=angular.module('app', ['ngRoute','ngCookies']);
     app.config(function ($provide) {
 
         $provide.provider('books', ['constants',function (constants) {
@@ -26,11 +26,13 @@
         
     });
 
-    app.config(['booksProvider','constants','dataServiceProvider',function(booksProvider,constants,dataServiceProvider){
+    app.config(['booksProvider','constants','$logProvider','dataServiceProvider',function(booksProvider,constants,$logProvider,dataServiceProvider){
         booksProvider.setIncludeVersionInTitle(true);
         console.log('title from constants service.'+constants.APP_TITLE);
 
         console.log(dataServiceProvider.$get);
+        //生产环境设置为false.
+        $logProvider.debugEnabled(false);
     }]);
 
     app.config(['$routeProvider',function($routeProvider){
