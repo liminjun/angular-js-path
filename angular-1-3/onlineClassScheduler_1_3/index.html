@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Online Class Scheduler</title>
+
+    <!-- Style sheets -->
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+
+</head>
+
+<body ng-app="onlineClassScheduler">
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <a class="navbar-brand"
+           ng-href="#">Online Class Scheduler</a>
+
+        <div class="navbar-header">
+            <button type="button"
+                    class="navbar-toggle"
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li><a ng-href="#classList">Class List</a></li>
+                <li><a ng-href="#classEdit/{{0}}">
+                    <i class="glyphicon glyphicon-plus"></i>
+                    Add Class</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <div ng-view></div>
+</div>
+
+    <!-- Library Scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-route.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/angular-mocks.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Services -->
+    <script src="common/services/common.services.js"></script>
+    <script src="common/services/classResource.js"></script>
+    <script src="common/services/classResourceMock.js"></script>
+
+    <!-- Online Class Scheduler Controllers -->
+    <script src="app/classes/classListCtrl.js"></script>
+    <script src="app/classes/classEditCtrl.js"></script>
+</body>
+
+</html>

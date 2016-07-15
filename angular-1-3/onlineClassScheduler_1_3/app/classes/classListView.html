@@ -1,0 +1,34 @@
+<div class="panel panel-browns">
+    <div class="panel-heading"
+         style="font-size:large">
+        Class List
+    </div>
+
+    <div class="panel-body">
+        <table class="table">
+
+            <thead>
+            <tr>
+                <td>Name</td>
+                <td>Description</td>
+                <td>Start</td>
+                <td>End</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="class in vm.classes">
+                 <td>{{ class.className}}</td>
+                <td>{{ class.description }}</td>
+                <td>{{ class.startDate | date }}</td>
+                <td>{{ class.endDate | date }}</td>
+                <td>
+                    <a class="btn btn-browns"
+                       ng-href="#classEdit/{{class.classId}}">
+                        Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

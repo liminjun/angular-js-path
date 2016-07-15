@@ -1,0 +1,11 @@
+<h1>Students</h1>
+<table class="table">
+  <tr><th>Name</th><th>Enroll Date</th><th>GPA</th></tr>
+  <tr ng-repeat="student in students">
+    <td>{{student.studentName}}</td>
+    <td>{{student.enrollDate | date}}</td>
+    <td>{{student.gpa}}</td>
+  </tr>
+</table>
+
+<input type="date">
