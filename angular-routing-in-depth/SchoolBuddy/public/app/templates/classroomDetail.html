@@ -1,0 +1,30 @@
+<div class="col-md-8 col-lg-8 col-md-offset-1 col-lg-offset-1">
+    <h3>School: {{ classroom.currentClassroom.school.name }}</h3>
+    <h3>Classroom: {{ classroom.currentClassroom.name }}</h3>
+    <h3>Teacher: {{ classroom.currentClassroom.teacher }}</h3>
+
+    <div>
+        <div class="panel panel-default">
+            <!-- Default panel contents -->
+            <div class="panel-heading">Registered Activities - {{ classroom.timePeriod }}</div>
+
+            <!-- Table -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>Activity Name</th>
+                    <th>Date</th>
+                </tr>
+                </thead>
+                <tr ng-repeat="activity in filteredActivities = (classroom.currentClassroom.activities | activityMonthFilter:classroom.month)">
+                    <td>{{ activity.name }}</td>
+                    <td>{{ activity.date | date:'fullDate' }}</td>
+                </tr>
+            </table>
+        </div>
+        <div ng-if="filteredActivities.length == 0">No activities</div>
+    </div>
+
+</div>
+
+

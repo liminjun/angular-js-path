@@ -1,0 +1,23 @@
+<h1 class="col-md-offset-1 col-lg-offset-1">All Classrooms</h1>
+<div class="col-md-8 col-lg-8 col-md-offset-1 col-lg-offset-1">
+    <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading">Registered Classrooms</div>
+
+        <!-- Table -->
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Classroom Name</th>
+                <th>School</th>
+                <th>Teacher</th>
+            </tr>
+            </thead>
+            <tr ng-repeat="classroom in classrooms.allClassrooms">
+                <td><a href="#/classrooms/{{ classroom.id }}/detail">{{ classroom.name }}</a></td>
+                <td>{{ classroom.school.name }}</td>
+                <td><a href="#/classrooms/{{ classroom.id }}">{{ classroom.teacher }}</a></td>
+            </tr>
+        </table>
+    </div>
+</div>

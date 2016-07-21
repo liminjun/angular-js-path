@@ -1,0 +1,10 @@
+<div class="col-md-10 col-lg-10 col-md-offset-1 col-lg-offset-1">
+
+    <h1>{{ home.message }}</h1>
+
+    <h3>Number of schools listed:  {{ home.schoolCount }}</h3>
+    <h3>Number of classrooms listed:  {{ home.classroomCount }}</h3>
+    <h3>Number of activities listed:  {{ home.activityCount }}</h3>
+
+    <button class="btn btn-primary" ng-click="home.refresh();">Refresh</button>
+</div>
