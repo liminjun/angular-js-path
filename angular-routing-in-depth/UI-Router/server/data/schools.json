@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Fort Craig Elementary",
+    "principal": "Michelle Thorne"
+  },
+  {
+    "id": 2,
+    "name": "Edgewood Elementary",
+    "principal": "Audrey Hills"
+  },
+  {
+    "id": 3,
+    "name": "Clarke Elementary",
+    "principal": "Scott Johnson"
+  },
+  {
+    "id": 4,
+    "name": "Meadowview Elementary",
+    "principal": "Jeffrey Bender"
+  },
+  {
+    "id": 5,
+    "name": "Coulter Ridge Elementary",
+    "principal": "Leigh Williams"
+  },
+  {
+    "id": 6,
+    "name": "Hilltop Elementary",
+    "principal": "Daniel Lanier"
+  }
+]
