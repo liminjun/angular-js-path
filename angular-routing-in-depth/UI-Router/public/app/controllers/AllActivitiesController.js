@@ -1,9 +1,9 @@
 (function () {
 
     angular.module('app')
-        .controller('AllActivitiesController', ['dataService', 'notifier','$state', AllActivitiesController]);
+        .controller('AllActivitiesController', ['dataService', 'notifier','$state','activities', AllActivitiesController]);
 
-    function AllActivitiesController(dataService, notifier,$state) {
+    function AllActivitiesController(dataService, notifier,$state,activities) {
 
         var vm = this;
 
@@ -18,11 +18,12 @@
             })
             .catch(showError);
 
-        dataService.getAllActivities()
-            .then(function(activities) {
-                vm.allActivities = activities;
-            })
-            .catch(showError);
+            vm.allActivities=activities;
+        // dataService.getAllActivities()
+        //     .then(function(activities) {
+        //         vm.allActivities = activities;
+        //     })
+        //     .catch(showError);
 
         function showError(message) {
             notifier.error(message);
