@@ -19,10 +19,11 @@ describe('Movie Result Directive', function() {
             '<p class="ng-binding">A young boy from Tatooine sets out on an adventure with an old Jedi named Obi-Wan Kenobi as his mentor to save Princess Leia from the ruthless Darth Vader and Destroy the Death Star built by the Empire which has the power to destroy the entire galaxy.</p>',
             '<p class="ng-binding"><strong>Director:</strong> George Lucas</p>',
             '<p class="ng-binding"><strong>Actors:</strong> Mark Hamill, Harrison Ford, Carrie Fisher, Peter Cushing</p>',
-            '<p class="ng-binding"><strong>Released:</strong> 25 May 1977</p>',
+            '<p class="ng-binding"><strong>Released:</strong> 25 May 1977 (39 years ago)</p>',
             '<p class="ng-binding"><strong>Genre:</strong> Action, Adventure, Fantasy</p>',
 		  '</div>'
 	  ].join('')
+
 
     var $compile;
     var $rootScope;
@@ -38,9 +39,10 @@ describe('Movie Result Directive', function() {
 		$rootScope.result = result;
 		var element = $compile('<movie-result result="result"></movie-result')($rootScope);
 		$rootScope.$digest();
+
 		expect(element.html()).toBe(expectedHtml);
     expect($rootScope.$countChildScopes()).toBe(1);
-    expect($rootScope.$countWatchers()).toBe(9);
+    expect($rootScope.$countWatchers()).toBe(10);
 	});
 
 });
