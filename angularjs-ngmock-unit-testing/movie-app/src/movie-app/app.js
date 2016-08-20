@@ -8,4 +8,7 @@ angular.module('movieApp', ['ui.bootstrap', 'ngRoute', 'omdb'])
   		.otherwise({
     		redirectTo: '/'
   		});
+	})
+	.config(function($logProvider){
+		$logProvider.debugEnabled(true);
 	});

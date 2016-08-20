@@ -16,11 +16,13 @@ describe('Home Controller',function(){
 
       var $scope;
       var $interval;
+      var $log;
       beforeEach(module('movieApp'));
 
-      beforeEach(inject(function(_$controller_,_$interval_){
+      beforeEach(inject(function(_$controller_,_$interval_,_$log_){
           $scope={};
-          $interval=_$interval_
+          $interval=_$interval_;
+          $log=_$log_;
           _$controller_('HomeController',{
               $scope:$scope
           });
