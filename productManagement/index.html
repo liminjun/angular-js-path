@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Acme Product Management</title>
+
+    <!-- Style sheets -->
+    <link href="css/bootstrap.css" rel="stylesheet"/>
+    <link href="css/app.css" rel="stylesheet"/>
+
+    <!-- Library Scripts -->
+    <script src="js/jquery.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/angular-resource.js"></script>
+    <script src="js/angular-mocks.js"></script>
+    <script src="js/angular-ui-router.js"></script>
+
+
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+
+    <!-- Product Controllers -->
+    <script src="common/services/common.service.js"></script>
+    <script src="common/services/productResource.js"></script>
+    <script src="common/services/productResourceMock.js"></script>
+
+    <script src="app/products/productListCtrl.js"></script>
+    <script src="app/products/productDetailCtrl.js"></script>
+    
+</head>
+
+<body ng-app="productManagement">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <a class="navbar-brand"
+               ui-sref="home">Acme Product Management</a>
+            <div class="navbar-header">
+                <button type="button"
+                        class="navbar-toggle"
+                        data-toggle="collapse"
+                        data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a ui-sref="productList">Product List</a></li>
+                    <li><a ui-sref="productEdit({productId:0})">
+                        <i class="glyphicon glyphicon-plus"></i>
+                        Add Product</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div ui-view></div>
+    </div>
+    
+</body>
+
+</html>
