@@ -53,8 +53,7 @@
         })
         .state('productEdit.price',{
             url:"/price",
-            templateUrl:"app/products/productEditPriceView.html",
-            controller:"ProductEditCtrl as vm"
+            templateUrl:"app/products/productEditPriceView.html"
         })
         .state('productEdit.tags',{
             url:"/tags",
