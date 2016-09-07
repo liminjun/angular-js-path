@@ -11,9 +11,22 @@
                        type="text"
                        placeholder="Product Name"
                        ng-model="vm.product.productName" 
-                       required/>
+                       required
+                       ng-minlength="4"
+                       ng-maxlength="12"/>
                 
             </div>
+            <span class="help-block has-error">
+                <span ng-show="productForm.inputProductName.$error.required">
+                    Product name is required.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.minlength">
+                    Product name must be at least 4 characters in length.
+                </span>
+                <span ng-show="productForm.inputProductName.$error.maxlength">
+                    Product name cannot exceed 12 characters in length.
+                </span>
+            </span>
         </div>
         <div class="form-group" ng-class="{'has-error':productForm.inputProductCode.$invalid}">
             <label class="col-md-2 control-label" for="inputProductCode">Product Code</label>
@@ -25,6 +38,9 @@
                        ng-model="vm.product.productCode"
                        required>
             </div>
+            <span class="help-block has-error" ng-show="productForm.inputProductCode.$invalid && productForm.inputProductCode.$dirty">
+                Product name is required.
+            </span>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label"
@@ -64,7 +80,8 @@
                     <span>
                         <button class="btn btn-primary"
                                 style="width:80px;margin-right:10px"
-                                ng-click="vm.submit()">
+                                ng-click="vm.submit()"
+                                ng-disabled="productForm.$invalid">
                             Save
                         </button>
                     </span>
