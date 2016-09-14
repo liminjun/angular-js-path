@@ -1,13 +1,14 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head lang="en">
     <meta charset="UTF-8">
     <title>Acme Product Management</title>
 
     <!-- Style sheets -->
-    <link href="css/bootstrap.css" rel="stylesheet"/>
-    <link href="css/app.css" rel="stylesheet"/>
-    <link href="css/toastr.css" rel="stylesheet"/>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="css/toastr.css" rel="stylesheet" />
     <!-- Library Scripts -->
     <script src="js/jquery.js"></script>
     <script src="js/angular.js"></script>
@@ -17,6 +18,9 @@
     <script src="js/ui-utils.js"></script>
     <script src="js/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="js/toastr.js"></script>
+
+   <script src="js/d3.js"></script>
+   <script src="js/angular-charts.js"></script>
     <!-- Application Script -->
     <script src="app/app.js"></script>
 
@@ -24,22 +28,21 @@
     <script src="common/services/common.service.js"></script>
     <script src="common/services/productResource.js"></script>
     <script src="common/services/productResourceMock.js"></script>
+    <script src="common/services/productService.js"></script>
 
     <script src="app/products/productListCtrl.js"></script>
     <script src="app/products/productDetailCtrl.js"></script>
     <script src="app/products/productEditCtrl.js"></script>
+
+    <script src="app/prices/priceAnalyticsCtrl.js"></script>
 </head>
 
 <body ng-app="productManagement">
     <nav class="navbar navbar-inverse">
         <div class="container">
-            <a class="navbar-brand"
-               ui-sref="home">Acme Product Management</a>
+            <a class="navbar-brand" ui-sref="home">Acme Product Management</a>
             <div class="navbar-header">
-                <button type="button"
-                        class="navbar-toggle"
-                        data-toggle="collapse"
-                        data-target=".navbar-collapse">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -49,9 +52,11 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a ui-sref="productList">Product List</a></li>
-                    <li><a ui-sref="productEdit.info({productId:0})">
-                        <i class="glyphicon glyphicon-plus"></i>
-                        Add Product</a></li>
+                    <li>
+                        <a ui-sref="productEdit.info({productId:0})">
+                            <i class="glyphicon glyphicon-plus"></i> Add Product</a>
+                    </li>
+                    <li><a ui-sref="priceAnalytics">Product Analytics</a></li>
                 </ul>
             </div>
         </div>
@@ -59,7 +64,7 @@
     <div class="container">
         <div ui-view></div>
     </div>
-    
+
 </body>
 
 </html>

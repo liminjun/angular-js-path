@@ -9,7 +9,8 @@
         'ui.router',
         'ui.utils',
         'ui.bootstrap',
-        'productResourceMock'
+        'productResourceMock',
+        'angularCharts'
         ]);
 
     app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRouterProvider){
@@ -60,6 +61,17 @@
         .state('productEdit.tags',{
             url:"/tags",
             templateUrl:"app/products/productEditTagsView.html"
+        })
+        .state('priceAnalytics',{
+            url:"/priceAnalytics",
+            templateUrl:"app/prices/priceAnalyticsView.html",
+            controller:"PriceAnalyticsCtrl",
+            resolve:{
+                productResource:"productResource",
+                products:function(productResource){
+                    return productResource.query().$promise;
+                }
+            }
         });
     }]);
 }());
